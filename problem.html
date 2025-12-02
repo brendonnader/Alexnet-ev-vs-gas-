@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Problem & Motivation – Electric vs Gas Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Problem & Motivation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem & Motivation</a>
+      <a href="approach.html">Technical Approach</a>
+      <a href="results.html">Results & Takeaways</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>The Real-World Problem</h2>
+    <div class="section">
+      <p>
+        As electric vehicles (EVs) become more common, cities, companies, and researchers need
+        better ways to <strong>identify and track EVs versus gas-powered cars</strong>. Manual checks are
+        slow and inconsistent, especially when there are thousands of vehicles in traffic footage or
+        parking lots.
+      </p>
+      <p>
+        Automated image-based classification can help support smarter infrastructure planning,
+        emissions analysis, and sustainability reporting.
+      </p>
+    </div>
+
+    <h2>Why It Matters</h2>
+    <div class="section">
+      <ul>
+        <li>
+          <strong>Sustainability:</strong> EV adoption is tied to climate and emissions goals. Knowing how many EVs are on the road helps with policy decisions.
+        </li>
+        <li>
+          <strong>Traffic & Infrastructure:</strong> Cities can design EV-only zones, charging stations, and parking based on accurate usage data.
+        </li>
+        <li>
+          <strong>Business Analytics:</strong> Parking garages, toll systems, and fleets may price or manage vehicles differently depending on fuel type.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Dataset Overview</h2>
+    <div class="section">
+      <p>
+        The dataset for this project includes images of electric and gas vehicles. The main structure is:
+      </p>
+      <pre>
+train/
+  eletric/
+  gas/
+valid/
+  Electric/
+  Regular/
+      </pre>
+      <p>
+        All images are resized to <strong>227×227</strong> pixels and normalized so they can be used as
+        input to AlexNet.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Created by [Your Name]</p>
+  </footer>
+</body>
+</html>
