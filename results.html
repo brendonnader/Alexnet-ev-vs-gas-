@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Results & Takeaways – Electric vs Gas Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Results & Visualizations</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem & Motivation</a>
+      <a href="approach.html">Technical Approach</a>
+      <a href="results.html">Results & Takeaways</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Training Curves</h2>
+    <div class="section">
+      <h3>Loss Over Epochs</h3>
+      <img src="images/loss_curve.png" alt="Training vs Validation Loss" />
+      <p class="figure-caption">
+        Figure 1: Training and validation loss across epochs. A downward trend suggests
+        the model is learning to minimize classification error.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Accuracy Over Epochs</h3>
+      <img src="images/accuracy_curve.png" alt="Training vs Validation Accuracy" />
+      <p class="figure-caption">
+        Figure 2: Training and validation accuracy across epochs. The lines indicate how
+        well the model fits the training data and how well it generalizes to validation data.
+      </p>
+    </div>
+
+    <h2>Confusion Matrix</h2>
+    <div class="section">
+      <img src="images/confusion_matrix.png" alt="Confusion Matrix" />
+      <p class="figure-caption">
+        Figure 3: Confusion matrix showing true vs predicted labels for the test set.
+        This helps visualize where the model is making mistakes.
+      </p>
+    </div>
+
+    <h2>Example Predictions</h2>
+    <div class="section">
+      <h3>Correct Predictions</h3>
+      <img src="images/correct_examples.png" alt="Correct Predictions" />
+      <p class="figure-caption">
+        Figure 4: Examples where the model correctly classified Electric and Gas vehicles.
+      </p>
+
+      <h3>Incorrect Predictions</h3>
+      <img src="images/incorrect_examples.png" alt="Incorrect Predictions" />
+      <p class="figure-caption">
+        Figure 5: Examples where the model predicted the wrong class. These are useful
+        for understanding limitations of the dataset and model.
+      </p>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <div class="section">
+      <ul>
+        <li>
+          The AlexNet-based model can distinguish between electric and gas vehicles with
+          good accuracy on this dataset.
+        </li>
+        <li>
+          Training and validation curves help confirm that the model is learning without severe
+          overfitting (or reveal if overfitting occurs).
+        </li>
+        <li>
+          Confusion matrix and misclassified examples show where the model struggles, such as
+          cars with similar shapes or unusual angles.
+        </li>
+        <li>
+          With more data, more classes (SUV, sedan, truck, etc.), and further tuning, this approach
+          could support real-world transportation analytics and sustainability monitoring.
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>Created by [Your Name]</p>
+  </footer>
+</body>
+</html>
