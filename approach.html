@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Technical Approach – Electric vs Gas Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Technical Approach with AlexNet</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem & Motivation</a>
+      <a href="approach.html">Technical Approach</a>
+      <a href="results.html">Results & Takeaways</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Model Architecture: AlexNet</h2>
+    <div class="section">
+      <p>
+        AlexNet is a convolutional neural network (CNN) that became famous after winning the
+        ImageNet competition in 2012. In this project, I use a <strong>pretrained AlexNet</strong> model
+        from PyTorch and fine-tune it on my electric vs gas vehicle dataset.
+      </p>
+      <p>Key components:</p>
+      <ul>
+        <li>Convolution layers to detect edges, textures, and shapes.</li>
+        <li>ReLU activations for faster non-linear learning.</li>
+        <li>Max pooling layers to downsample feature maps.</li>
+        <li>Fully connected layers that map learned features to class scores.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Layer-by-Layer Summary</h3>
+      <ul>
+        <li>Conv1 + ReLU + MaxPool</li>
+        <li>Conv2 + ReLU + MaxPool</li>
+        <li>Conv3 + ReLU</li>
+        <li>Conv4 + ReLU</li>
+        <li>Conv5 + ReLU + MaxPool</li>
+        <li>Fully connected (4096 units) + ReLU + Dropout</li>
+        <li>Fully connected (4096 units) + ReLU + Dropout</li>
+        <li>
+          Output layer: <strong>2 units</strong> (Electric vs Gas) replacing the original 1000-class layer.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Training Process</h2>
+    <div class="section">
+      <ul>
+        <li><strong>Input size:</strong> 3 × 227 × 227 (RGB images).</li>
+        <li>
+          <strong>Preprocessing:</strong> Resize, random horizontal flip (data augmentation),
+          convert to tensor, and normalize using ImageNet mean and std.
+        </li>
+        <li><strong>Loss function:</strong> Cross-Entropy Loss (standard for classification).</li>
+        <li><strong>Optimizer:</strong> Adam with learning rate 0.001.</li>
+        <li><strong>Batch size:</strong> 32.</li>
+        <li><strong>Epochs:</strong> 10 (can be increased for better performance).</li>
+        <li>
+          <strong>Datasets:</strong> Training and validation sets are loaded from separate folders
+          using PyTorch&rsquo;s <code>ImageFolder</code> and <code>DataLoader</code>.
+        </li>
+      </ul>
+    </div>
+
+    <h2>How the Data Fits the Model</h2>
+    <div class="section">
+      <p>
+        Each image from the dataset is transformed into a tensor with shape
+        <code>[3, 227, 227]</code>. The last fully connected layer of AlexNet is replaced with:
+      </p>
+      <pre><code>model.classifier[6] = nn.Linear(in_features, 2)</code></pre>
+      <p>
+        This tells the network to output probabilities for the two classes: Electric and Gas.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Created by [Your Name]</p>
+  </footer>
+</body>
+</html>
