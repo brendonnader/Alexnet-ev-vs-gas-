@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- SAME HEADER + NAV AS OTHER PAGES -->
+  <!-- Same header + nav as the other pages -->
   <header>
     <h1>Electric vs Gas Cars – AlexNet Classification</h1>
     <nav>
@@ -23,7 +23,8 @@
     <!-- TRAINING CURVES -->
     <div class="section">
       <h3>Loss Over Epochs</h3>
-      <img src="images/trainingvsloss.png" alt="Training vs Validation Loss" />
+      <!-- images/ removed, using root-level file -->
+      <img src="trainingvsloss.png" alt="Training vs Validation Loss" />
       <p class="figure-caption">
         Figure 1: Training and validation loss across 10 epochs. The curves fluctuate,
         which suggests the model is having trouble finding a stable minimum, likely due
@@ -33,7 +34,7 @@
 
     <div class="section">
       <h3>Accuracy Over Epochs</h3>
-      <img src="images/trainingvsvalid.png" alt="Training vs Validation Accuracy" />
+      <img src="trainingvsvalid.png" alt="Training vs Validation Accuracy" />
       <p class="figure-caption">
         Figure 2: Training accuracy peaks at about 75.9%, while validation accuracy
         stays between roughly 42% and 57%. This gap shows that the model fits the
@@ -44,7 +45,7 @@
     <!-- CONFUSION MATRIX -->
     <h2>Confusion Matrix</h2>
     <div class="section">
-      <img src="images/confusion matrix.png" alt="Confusion Matrix" />
+      <img src="confusion matrix.png" alt="Confusion Matrix" />
       <p class="figure-caption">
         Figure 3: Confusion matrix on the test set. The model predicted all cars as Gas:
         83 Gas cars were correctly classified, but 112 Electric cars were all
@@ -57,7 +58,7 @@
     <h2>Example Predictions</h2>
     <div class="section">
       <h3>Correct Predictions</h3>
-      <img src="images/correct prediction.png" alt="Correct Predictions" />
+      <img src="correct prediction.png" alt="Correct Predictions" />
       <p class="figure-caption">
         Figure 4: Examples where the model correctly predicted Gas for gas-powered
         vehicles. These examples show that the model has learned some useful
@@ -65,7 +66,7 @@
       </p>
 
       <h3>Incorrect Predictions</h3>
-      <img src="images/incorrect.png" alt="Incorrect Predictions" />
+      <img src="incorrect.png" alt="Incorrect Predictions" />
       <p class="figure-caption">
         Figure 5: Examples where Electric vehicles were incorrectly classified as Gas.
         Many of these cars look visually similar to gas sedans, and the model is heavily
